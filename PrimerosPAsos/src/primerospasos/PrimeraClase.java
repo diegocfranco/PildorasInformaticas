@@ -6,9 +6,6 @@ package primerospasos;
  */
 public class PrimeraClase {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         System.out.println("Hola Alumnos");
     }
