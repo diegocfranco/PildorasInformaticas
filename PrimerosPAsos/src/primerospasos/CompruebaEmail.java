@@ -9,20 +9,24 @@ import javax.swing.JOptionPane;
 
 public class CompruebaEmail {
     public static void  main(String[]args){
-        boolean arroba = false;
+        int arroba = 0;
+        boolean punto = false;
         
         String email = JOptionPane.showInputDialog("ingrese su email: ");
         
         for(int i = 0;i<email.length();i++){
             if(email.charAt(i)=='@'){
-                arroba=true;
-            }   
+                arroba ++;
+            }  
+            if(email.charAt(i)=='.'){
+                punto=true;
+            }             
         }
         
-        if(arroba==true){
+        if(punto == true && arroba==1){
             System.out.println("el email es correcto");
         }
-        else if(arroba==false){
+        else{
             System.out.println("el email es incorrecto");
         }    
     }
