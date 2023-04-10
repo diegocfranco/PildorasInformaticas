@@ -7,8 +7,9 @@ package primerospasos;
  */
 public class ArraysBidimensionales {
     public static void main(String[] args){
-        
+        /**
         int [][] matriz = new int[4][5];
+        
         matriz[0][0]=1;
         matriz[0][1]=2;
         matriz[0][2]=3;
@@ -32,15 +33,30 @@ public class ArraysBidimensionales {
         matriz[3][2]=1;
         matriz[3][3]=1;
         matriz[3][4]=1;
+        **/
+        
+        int [][] matriz = {
+            {1,2,3,4,5},
+            {6,7,8,9,1},
+            {1,1,1,1,1},
+            {2,2,2,2,2}
+          
+        };
         
         for(int i=0;i<4;i++){
             for(int j=0;j<5;j++){
                 System.out.print(matriz[i][j]+" ");
             }
             System.out.println();
-
         }
         
+        System.out.println();   
+        
+        for(int fila[]:matriz){
+            for(int x:fila){
+                System.out.print(x+" ");
+            }
+            System.out.println();
+        }
     }
-    
 }
