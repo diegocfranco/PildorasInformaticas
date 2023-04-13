@@ -26,13 +26,18 @@ public class UsoEmpleado {
         System.out.println("nombre: "+empleado3.getNombre()+"sueldo: "+empleado3.getSueldo()
         +"fecha de alta "+ empleado3.getAltaContrato());
         **/
-        
-        Empleado[] misEmpleados=new Empleado[4];
+        Jefatura jefeRRHH = new Jefatura("Rodrigo",5000,2006,3,2);
+        jefeRRHH.setIncentivo(2570);
+        Empleado[] misEmpleados=new Empleado[6];
         misEmpleados[0] = new Empleado("Juan",5000,2000,8,9 );
         misEmpleados[1] = new Empleado("Juanito",10000 ,2023,6,8 );
         misEmpleados[2] = new Empleado("Golondrina",15000 ,2001,7,4 );  
         misEmpleados[3] = new Empleado("Afonso" );
-        for (int i=0;i<3;i++){
+        misEmpleados[4] =jefeRRHH;
+        misEmpleados[5] = new Jefatura("Maria",5000,2006,3,2);
+        Jefatura jefefinanzas =(Jefatura)misEmpleados[5];
+        jefefinanzas.setIncentivo(5000);
+        for (int i=0;i<6;i++){
             misEmpleados[i].aumentoSueldo(5);
             System.out.println("nombre: "+misEmpleados[i].getNombre()+" sueldo: "+misEmpleados[i].getSueldo()
         +" fecha de alta "+ misEmpleados[i].getAltaContrato());    
@@ -94,3 +99,27 @@ class Empleado{
         private double sueldo;
         private Date altaContrato;
 }
+
+class Jefatura extends Empleado{
+    
+    private double incentivo;
+    
+    public Jefatura(String nom,double sue,int agno,int mes,int dia){
+        super( nom, sue, agno, mes, dia);
+    }
+    
+
+    @Override
+    public double getSueldo() {
+        double sueldoJefe = super.getSueldo();
+        return sueldoJefe +incentivo;
+    }
+
+    public void setIncentivo(double incentivo) {
+        this.incentivo = incentivo;
+    }
+
+
+
+}
+
