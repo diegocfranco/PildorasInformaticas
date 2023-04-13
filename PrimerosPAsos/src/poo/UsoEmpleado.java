@@ -27,11 +27,11 @@ public class UsoEmpleado {
         +"fecha de alta "+ empleado3.getAltaContrato());
         **/
         
-        Empleado[] misEmpleados=new Empleado[3];
+        Empleado[] misEmpleados=new Empleado[4];
         misEmpleados[0] = new Empleado("Juan",5000,2000,8,9 );
         misEmpleados[1] = new Empleado("Juanito",10000 ,2023,6,8 );
         misEmpleados[2] = new Empleado("Golondrina",15000 ,2001,7,4 );  
-        
+        misEmpleados[3] = new Empleado("Afonso" );
         for (int i=0;i<3;i++){
             misEmpleados[i].aumentoSueldo(5);
             System.out.println("nombre: "+misEmpleados[i].getNombre()+" sueldo: "+misEmpleados[i].getSueldo()
@@ -54,6 +54,11 @@ class Empleado{
         GregorianCalendar calendario= new GregorianCalendar(agno,mes-1,dia);
         altaContrato =calendario.getTime();
   
+    }
+    public Empleado(String nom){
+        
+        this(nom,300000,2000,1,1);
+        
     }
 
     public String getNombre() {
