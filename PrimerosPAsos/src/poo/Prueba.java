@@ -10,8 +10,10 @@ public class Prueba {
          Empleado empleado2= new Empleado("Paco");
          empleado2.setSeccion("RRHH");
          //empleado2.setNombre("paca");
-         System.out.println(empleado1.devuelveDatos());
-         System.out.println(empleado2.devuelveDatos());
+         //System.out.println(empleado1.devuelveDatos());
+         //System.out.println(empleado2.devuelveDatos());
+         System.out.println(empleado1.devuelveDatos() +"\n"+ empleado2.devuelveDatos()+"\n"+Empleado.getIdSiguiente());
+         
      }
     
          
@@ -40,6 +42,12 @@ class Empleado{
         
         return "el nombre es "+nombre+" y la seccion es "+seccion+" y su id es "+id;
     }
+    
+    public static String getIdSiguiente(){
+        
+        return "el id siguiente es "+ idSiguiente;
+    }
+    
     public Empleado(String nom){
         nombre=nom;
         seccion="Administracion";
