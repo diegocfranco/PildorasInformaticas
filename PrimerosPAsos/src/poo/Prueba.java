@@ -19,6 +19,8 @@ public class Prueba {
 class Empleado{
     private final String  nombre;
     private String seccion;
+    private int id;
+    private static int idSiguiente=1;
     
     
     public String getNombre() {
@@ -36,11 +38,14 @@ class Empleado{
     
     public String devuelveDatos(){
         
-        return "el nombre es "+nombre+" y la seccion es "+seccion;
+        return "el nombre es "+nombre+" y la seccion es "+seccion+" y su id es "+id;
     }
     public Empleado(String nom){
         nombre=nom;
         seccion="Administracion";
+        id=idSiguiente;
+        idSiguiente++;
+        
         
     }
     
